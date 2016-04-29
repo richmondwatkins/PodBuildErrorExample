@@ -22,7 +22,7 @@ public struct AMALivePhotoImageRef {
     }
     
     private func getLivePhotoSize(localOnly localOnly : Bool) -> Int? {
-        if #available(iOSApplicationExtension 9.1, *) {
+        if #available(iOS 9.1, *) {
             var retval: Int = 0
             let (photoData, videoData, _) = getLivePhotoData(localOnly: localOnly)
             
@@ -50,7 +50,7 @@ public struct AMALivePhotoImageRef {
         }
     }
     
-    @available(iOSApplicationExtension 9.1, *)
+    @available(iOS 9.1, *)
     public func getLivePhotoData(localOnly localOnly : Bool) -> (photoData: NSData?, videoData: NSData?, error: NSError?) {
         var retval: (photoData: NSData?, videoData: NSData?, error: NSError?)
         
@@ -95,7 +95,7 @@ public struct AMALivePhotoImageRef {
         return retval
     }
     
-    @available(iOSApplicationExtension 9.1, *)
+    @available(iOS 9.1, *)
     public func getLivePhotoSynchronously(localOnly localOnly: Bool) -> PHLivePhoto? {
         
         var retLivePhoto: PHLivePhoto?
@@ -107,7 +107,7 @@ public struct AMALivePhotoImageRef {
         return retLivePhoto
     }
     
-    @available(iOSApplicationExtension 9.1, *)
+    @available(iOS 9.1, *)
     public func getLivePhotoAsynchronously(localOnly localOnly: Bool, completion:(livePhoto: PHLivePhoto?) -> Void) {
         
         var shouldReturn: Bool = true
